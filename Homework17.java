@@ -1,147 +1,98 @@
+import java.util.ArrayList;
+
 public class Homework17 {
 
-	/* Given an array of ints, is it possible to choose a
-	 * group of some of the ints, such that the group sums
-	 * to the given target? This is a classic backtracking
-	 * recursion problem. Once you understand the recursive
-	 * backtracking strategy in this problem, you can use
-	 * the same pattern for many problems to search a space
-	 * of choices. Rather than looking at the whole array,
-	 * our convention is to consider the part of the array
-	 * starting at index start and continuing to the end of
-	 * the array. The caller can specify the whole array
-	 * simply by passing start as 0. No loops are needed.
-	 * The recursive calls progress down the array.
-	 *
-	 * problem1(0, [2, 4, 8], 10) → true
-	 * problem1(0, [2, 4, 8], 14) → true
-	 * problem1(0, [2, 4, 8], 9) → false
+	/* Determine whether or not the ArrayList is sorted. Return true if it
+	 * is sorted in non-decreasing order (each element is at lest as big as
+	 * the one before it), false otherwise.
 	 */
 
+	 public static boolean problem1(ArrayList<Integer> l) {
 
-	public static boolean problem1(int start, int[] nums, int target) {
-		return false;
-	}
-
-	/* Given an array of ints, is it possible to choose a
-	 * group of some of the ints, beginning at the start
-	 * index, such that the group sums to the given target?
-	 * However, with the additional constraint that all 6's
-	 * must be chosen. (No loops needed.)
-	 *
-	 * problem2(0, [5, 6, 2], 8) → true
-	 * problem2(0, [5, 6, 2], 9) → false
-	 * problem2(0, [5, 6, 2], 7) → false
-	 */
-
-	 public static boolean problem2(int start, int[] nums, int target) {
-		 return false;
  	}
 
-	/* Given an array of ints, is it possible to divide the
-	 * ints into two groups, so that the sums of the two
-	 * groups are the same. Every int must be in one group
-	 * or the other. Write a recursive helper method that
-	 * takes whatever arguments you like, and make the
-	 * initial call to your recursive helper from
-	 * problem3(). (No loops needed.)
-	 *
-	 * problem3([2, 2]) → true
-	 * problem3([2, 3]) → false
-	 * problem3([5, 2, 3]) → true
+	/* Sort the ArrayList l. You can use either selection sort or insertion
+	 * sort. You must program the sort to get credit.
 	 */
 
-	public static boolean problem3(int[] nums) {
-		return false;
+	public static void problem2(ArrayList<Integer> l) {
+
 	}
 
-	public static boolean problem3(/* parameters */) {
-		return false;
-	}
-
-
-	/* Given an array of ints, is it possible to choose
-	 * a group of some of the ints, such that the group
-	 * sums to the given target, with this additional
-	 * constraint: if there are numbers in the array
-	 * that are adjacent and the identical value, they
-	 * must either all be chosen, or none of them chosen.
-	 * For example, with the array {1, 2, 2, 2, 5, 2},
-	 * either all three 2's in the middle must be chosen
-	 * or not, all as a group. (one loop can be used to
-	 * find the extent of the identical values).
-	 *
-	 * problem4(0, [2, 4, 8], 10) → true
-	 * problem4(0, [1, 2, 4, 8, 1], 14) → true
-	 * problem4(0, [2, 4, 4, 8], 14) → false
+	/* Given an unsorted ArrayList l of ints, return the first index of the
+	 * int n. If the value is not in the ArrayList, return -1.
 	 */
 
-	public static boolean problem4(int start, int[] nums, int target) {
-		return false;
+	public static int problem3(ArrayList<Integer> l, int n) {
+
 	}
 
-	/* Given an array of ints, is it possible to divide
-	 * the ints into two groups, so that the sum of one
-	 * group is a multiple of 10, and the sum of the
-	 * other group is odd. Every int must be in one
-	 * group or the other. Write a recursive helper
-	 * method that takes whatever arguments you like,
-	 * and make the initial call to your recursive
-	 * helper from problem5(). (No loops needed.)
-	 *
-	 * problem5([5, 5, 5]) → true
-	 * problem5([5, 5, 6]) → false
-	 * problem5([5, 5, 6, 1]) → true
+	/* Given a sorted ArrayList l of ints, return the first index of the
+	 * int n. If the value is not in the ArrayList, return -1. You must
+	 * program binary search to receive credit.
 	 */
 
-	public static boolean problem5(int[] nums) {
-		return false;
+	public static int problem4(ArrayList<Integer> l, int n) {
+
 	}
 
-	public static boolean problem5(/* parameters */) {
-		return false;
+	/* Given an ArrayLis l of ints, return the maximum value in the list.
+	 */
+
+	public static int problem5(ArrayList<Integer> l) {
+
 	}
 
 	public static void main(String[] args) {
 		boolean passed = true;
 
-		int[] arr1 = {2, 4, 8};
-		if (!problem1(0, arr1, 8)) {
-			System.out.println("Fail 1.1");
-			passed = false;
-		} else if (problem1(1, arr1, 2)) {
-			System.out.println("Fail 1.2");
-			passed = false;
+		ArrayList<Integer> l = new ArrayList<Integer>();
+		for (int i = 0; i < 50; i += 2) {
+			l.add(0, i);
 		}
 
-		int[] arr2 = {1, 6, 2, 6, 4};
-		if (!problem2(0, arr2, 13)) {
-			System.out.println("Fail 2.1");
+		if (problem1(l)) {
+			System.out.println("Fail 1");
 			passed = false;
-		} else if (problem2(0, arr2, 4)) {
-			System.out.println("Fail 2.2");
-			passed = false;
+		} else {
+			System.out.println("Pass 1");
 		}
 
-		int[] arr3 = {1, 2, 3, 10, 10, 1, 1};
-		if (!problem3(arr3)) {
-			System.out.println("Fail 3");
+		problem2(l);
+		if (!problem1(l)) {
+			System.out.println("Fail 2");
 			passed = false;
+		} else {
+			System.out.println("Pass 2");
 		}
 
-		int[] arr4 = {8, 2, 2, 1};
-		if (!problem4(0, arr4, 9)) {
+		l.add(5, 100);
+		if (problem3(l, 100) != 5) {
+			System.out.println("Fail 3.1");
+			passed = false;
+		} else if (problem3(l, 200) != -1) {
+			System.out.println("Fail 3.2");
+			passed = false;
+		} else {
+			System.out.println("Pass 3");
+		}
+
+		l.remove(5);
+		if (problem4(l, 4) != 2) {
 			System.out.println("Fail 4.1");
 			passed = false;
-		} else if (problem4(0, arr4, 11)) {
+		} else if (problem4(l, 200) != -1) {
 			System.out.println("Fail 4.2");
 			passed = false;
+		} else {
+			System.out.println("Pass 4");
 		}
 
-		int[] arr5 = {6, 5, 5, 1, 10};
-		if (!problem5(arr5)) {
+		if (problem5(l) != 48) {
 			System.out.println("Fail 5");
 			passed = false;
+		} else {
+			System.out.println("Pass 5");
 		}
 
 		if (passed) {
