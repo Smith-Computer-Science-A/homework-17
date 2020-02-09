@@ -36,7 +36,7 @@ public class Homework17 {
 
 	}
 
-	/* Given an ArrayLis l of ints, return the maximum value in the list.
+	/* Given an ArrayList l of ints, return the maximum value in the list.
 	 */
 
 	public static int problem5(ArrayList<Integer> l) {
